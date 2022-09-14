@@ -15,7 +15,7 @@ export function HeroSection() {
   const [selected, setSelected] = useState("TR");
   const [value, setValue] = useState("");
   return (
-    <div className="relative h-[500px] before:bg-hero-bg before:absolute before:inset-0 before:w-full before:h-full before:z-[5]">
+    <div className="relative h-[500px] before:bg-hero-bg before:absolute before:inset-0 before:w-full before:h-full before:z-[5] md:hidden">
       <Slider {...settings}>
         <div className="">
           <img

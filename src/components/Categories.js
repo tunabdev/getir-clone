@@ -9,8 +9,8 @@ export const Categories = () => {
       className="container mx-auto bg-white "
     >
       <div className="flex max-w-[1232px] flex-col w-full mx-auto pt-6 gap-y-2 mb-4 ">
-        <h6 className="pl-8 text-sm font-semibold ">Kategoriler</h6>
-        <div className="grid grid-cols-10 gap-4 px-8 mb-6 lg:grid-cols-5 ">
+        <h6 className="pl-8 text-sm font-semibold md:pl-4 ">Kategoriler</h6>
+        <div className="grid grid-cols-10 gap-4 px-8 mb-6 md:px-4 lg:grid-cols-5 md:grid-cols-4 ">
           {Products.map(({ image, title, id }) => (
             <button key={id} className="w-full">
               <a

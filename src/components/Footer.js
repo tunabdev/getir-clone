@@ -6,11 +6,13 @@ import FooterJson from "../api/footer.json";
 import { FaFacebook } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
+import { useMediaQuery } from "@react-hook/media-query";
 //
 export const Footer = () => {
+  const matches = useMediaQuery("only screen and (max-width: 760px)");
   return (
     <div className="py-12 bg-white ">
-      <div className="px-8 mx-auto max-w-[1232px] grid grid-cols-4 gap-x-6 ">
+      <div className="px-8 mx-auto max-w-[1232px] grid grid-cols-4 md:grid-cols-1 md:gap-y-3  gap-x-6 ">
         <div>
           <div className="flex flex-col gap-y-4">
             <div className="text-primary text-[18px]">Getir'i indirin!</div>
@@ -56,15 +58,17 @@ export const Footer = () => {
         ))}
       </div>
       <hr className="mt-4  mx-auto max-w-[1168px] h-px bg-gray-200" />
-      <div className="px-8 mt-6 flex   max-w-[1232px] mx-auto items-center justify-between text-sm">
-        <div className="flex gap-x-2">
+      <div className="px-8 mt-6 flex md:flex-col md:gap-y-2   max-w-[1232px] mx-auto items-center justify-between text-sm md:text-[13px]">
+        <div className="flex md:flex-col md:items-center md:gap-y-1 gap-x-2">
           <span className="text-text-black">&copy; 2022 Getir</span>
           <span className="text-primary ">
-            <a href="#">&ensp; • &emsp; Bilgi Toplumu Hizmetleri</a>
+            <a href="#">
+               {!matches ? `   •    ` : ""} Bilgi Toplumu Hizmetleri
+            </a>
           </span>
         </div>
-        <div className="flex gap-x-4">
-          <div className="flex items-center justify-center w-8 h-8 rounded-lg hover:bg-primary-light group">
+        <div className="flex gap-x-4 md:gap-x-2">
+          <div className="flex items-center justify-center w-8 h-8 rounded-lg md:justify-between hover:bg-primary-light group">
             <FaFacebook className="group-hover:fill-secondary" size={20} />
           </div>
           <div className="flex items-center justify-center w-8 h-8 rounded-lg hover:bg-primary-light group">
